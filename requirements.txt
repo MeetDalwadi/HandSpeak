@@ -1,0 +1,12 @@
+Flask
+numpy
+opencv-python
+pyttsx3
+tensorflow
+cvzone
+pyenchant
+nltk
+flask-sqlalchemy
+flask-migrate
+python-dotenv
+mediapipe

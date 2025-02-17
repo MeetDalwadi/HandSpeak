@@ -1,0 +1,17 @@
+{% block navbar %}
+<nav>
+    <div class="nav-wrapper">
+        <a href="{{ url_for('main.index') }}" class="brand">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+            <span>HandSpeak Innovators</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('main.index') }}">Home</a></li>
+            <li><a href="{{ url_for('text_to_sign.index') }}">Text to Sign</a></li>
+            <li><a href="{{ url_for('sign_to_text.index') }}">Sign to Text</a></li>
+            <li><a target="_blank" href="http://localhost:5000/">Learning</a></li>
+            <li><a target="_blank" href="http://localhost:3000/">HandSpeak Community</a></li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}

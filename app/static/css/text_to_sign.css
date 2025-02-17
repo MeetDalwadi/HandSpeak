@@ -1,0 +1,231 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --background-color: #f5f6fa;
+    --text-color: #2c3e50;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.split {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.left {
+    background-color: white;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.right {
+    background-color: white;
+}
+
+.input-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.mytext {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e1e1;
+    border-radius: var(--border-radius);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.mytext:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: var(--box-shadow);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.mic {
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mic:hover {
+    background-color: var(--primary-color);
+}
+
+.mic img {
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.mic:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.submit {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #357abd;
+    transform: translateY(-1px);
+}
+
+.result-section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    border-radius: 10px;    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.result-table {
+    width: 100%;
+    border-radius: 10px;
+    border-collapse: collapse;
+}
+.td {
+    padding: 1.5rem; /* Increase padding for better spacing */
+    font-size: 1.5rem; /* Make text bigger */
+    font-weight: bold; /* Make text bold */
+    background-color: var(--primary-color); /* Use the blue color from your variables */
+    color: white; /* Set text color to white */
+    border-bottom: 2px solid white; /* Make the border white for contrast */
+}
+
+
+.word-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.word-list li {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.video-section {
+    text-align: center;
+}
+
+.video-controls {
+    margin-bottom: 1rem;
+}
+
+#videoPlayer {
+    width: 600px;  /* Adjust as needed */
+    height: 336px;
+    margin: auto;
+    position: relative;
+    background: url('/static/background.png') no-repeat center center;
+    background-size: cover;
+    /* padding: 20px; */
+    /* border-radius: 10px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#videoPlayer video {
+    width: 600px;
+    height: 336px;
+    background: transparent;
+}
+/* #videoPlayer {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-width: 100%;
+    height: auto;
+} */
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #357abd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .split {
+        flex: none;
+        height: auto;
+    }
+
+    .left {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .input-section {
+        padding: 1rem;
+    }
+}

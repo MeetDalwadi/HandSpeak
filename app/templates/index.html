@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to HandSpeak Innovators</title>
+
+    <!-- Stylesheets -->
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    {% include "includes/navbar.html" %}
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to HandSpeak</h1>
+                <p>Empowering the Deaf Community with AI-Powered Sign Language Solutions</p>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <i class="fas fa-camera"></i>
+                        <h3>Capture Gestures</h3>
+                        <p>Our AI recognizes hand movements using advanced computer vision.</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-language"></i>
+                        <h3>Translate in Real-Time</h3>
+                        <p>Converts sign language into text and speech instantly.</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-comments"></i>
+                        <h3>Engage & Communicate</h3>
+                        <p>Fosters better communication between signers and non-signers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Project -->
+        <section class="about">
+            <div class="container">
+                <h2>Our Solution</h2>
+                <p>
+                    HandSpeak Innovators is an AI-driven platform that enhances communication for the deaf and hard of hearing. 
+                    Our project bridges the gap by offering real-time translation between <strong>sign language, text, and voice.</strong>
+                </p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-sign-language"></i>
+                        <h3>Sign to Text & Voice</h3>
+                        <p>Convert sign language gestures into real-time text and voice output.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-microphone"></i>
+                        <h3>Text & Voice to Sign</h3>
+                        <p>Translate spoken words and text into sign language animations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Learning Hub</h3>
+                        <p>Interactive lessons and tutorials to master sign language effectively.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h3>HandSpeak Community</h3>
+                        <p>Connect with others, practice signing, and support inclusivity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why This Matters -->
+        <section class="importance">
+            <div class="container">
+                <h2>Why HandSpeak Innovators?</h2>
+                <p>Millions of deaf individuals struggle with communication barriers daily. Our AI-powered platform offers <strong>accessible, real-time solutions</strong> to empower them in education, workplaces, and daily life.</p>
+                <p>With <strong>machine learning, computer vision, and NLP</strong>, we make sign language <strong>more accessible than ever!</strong></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; {{ now.year }} HandSpeak Innovators. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text2Sign - Modern Sign Language Translator</title>
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/text_to_sign.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    {% include "includes/navbar.html" %}
+
+    <div class="container">
+        <div class="split left">
+            <div class="input-section">
+                <h2>Text to Sign Language Converter</h2>
+                <form action="{{ url_for('text_to_sign.animation_view') }}" method="post">
+                    <div class="input-group">
+                        <input type="text" name="sen" class="mytext" id="speechToText" 
+                               placeholder="Type your text or use microphone...">
+                        <div class="button-group">
+                            <button type="button" class="mic" onclick="record()" title="Click to speak">
+                                <img src="{{ url_for('static', filename='images/mic3.png') }}" 
+                                     height="32px" width="38px" alt="Microphone">
+                            </button>
+                            <input type="submit" class="submit" value="Translate">
+                        </div>
+                    </div>
+                </form>
+
+                {% if text %}
+                <div class="result-section">
+                    <table class="result-table">
+                        <tr class="tr">
+                            <td class="td">Your text:</td>
+                            <td class="td">{{ text }}</td>
+                        </tr>
+                        <!-- <tr>
+                            <td class="td">Sign language words:</td>
+                            <td class="td">
+                                <ul class="word-list">
+                                    {% for word in words %}
+                                    <li>{{ word }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr> -->
+                    </table>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="split right">
+            <div class="video-section">
+                <h2>Sign Language Animation</h2>
+                <div class="video-controls" data-words-list='{{ words|default([])|tojson|safe }}'>
+                    <button class="submit" onclick="playPause()">Play/Pause</button>
+                </div>
+                <video id="videoPlayer" width="600" height="350" preload="auto">
+                    <source src="" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/text_to_sign.js') }}"></script>
+</body>
+</html>

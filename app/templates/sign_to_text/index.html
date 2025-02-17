@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language To Text Conversion</title>
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/sign_to_text.css') }}" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">  
+</head>
+<body>
+    {% include "includes/navbar.html" %}
+
+    <div class="main-container">
+        <h1 class="title">Sign Language To Text</h1>
+        
+        <div id="error-message" class="error-message"></div>
+        
+        <div class="video-container">
+            <div>
+                <img id="video-feed" class="video-feed" src="" alt="Video Feed">
+                <div id="video-placeholder" class="video-feed placeholder-image" style="display: none;">
+                    Camera feed unavailable
+                </div>
+            </div>
+        </div>
+
+        <div class="text-display">
+            <div class="current-char">
+                <strong>Current Sign:</strong> <span id="current-symbol">-</span>
+            </div>
+
+            <div class="sentence">
+                <strong>Text:</strong> <span id="sentence">-</span>
+            </div>
+        </div>
+        <!-- Suggestions UI -->
+        <div class="suggestions-container">
+            <h3>Sentence Suggestions</h3>
+            <button class="btn btn-outline-secondary suggestion-btn" id="suggestion-1" onclick="useSuggestion(1)">...</button>
+            <button class="btn btn-outline-secondary suggestion-btn" id="suggestion-2" onclick="useSuggestion(2)">...</button>
+            <button class="btn btn-info" onclick="generateSuggestions()">Get Suggestions</button>
+        </div>
+        <div class="control-buttons">
+            <button class="btn btn-danger" onclick="clearSentence()">Clear</button>
+            <button class="btn btn-success" onclick="speak()">Speak</button>
+            <button id="video-toggle-btn" class="btn btn-primary" onclick="toggleVideoFeed()">Stop Video</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/sign_to_text.js') }}"></script>
+</body>
+</html>

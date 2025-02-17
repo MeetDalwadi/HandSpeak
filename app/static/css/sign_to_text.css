@@ -1,0 +1,120 @@
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 90px; /* Account for fixed navbar height (70px) + some spacing */
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.main-container {
+    margin-top: 20px;
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+.title {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.video-feed {
+    width: 480px;
+    height: 360px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.text-display {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.current-char {
+    font-size: 24px;
+    font-family: 'Segoe UI', sans-serif;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+.sentence {
+    font-size: 24px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #2c3e50;
+    min-height: 50px;
+    word-wrap: break-word;
+}
+.control-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.btn {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+.btn-danger {
+    background-color: #e74c3c;
+    border: none;
+}
+.btn-success {
+    background-color: #2ecc71;
+    border: none;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.error-message {
+    color: #dc3545;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    display: none;
+}
+.placeholder-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+/* Suggestions */
+.suggestions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align buttons to the start */
+    gap: 10px; /* Add space between buttons */
+}
+
+.suggestions-container h3 {
+    width: fit-content;
+    margin: auto;
+}
+
+.suggestions-container .btn {
+    display: block; /* Ensure each button takes full width */
+    width: auto; /* Adjust width as needed */
+    margin: auto;
+}

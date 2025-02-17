@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL Learning Library - HandSpeak Innovators</title>
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/learning.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    {% include "includes/navbar.html" %}
+
+    <main class="learning-main">
+        <div class="learning-header">
+            <h1>ASL Learning Library</h1>
+            <p>Master American Sign Language through our comprehensive video lessons</p>
+        </div>
+
+        <div class="categories-section">
+            <h2>Learning Categories</h2>
+            
+            <!-- Alphabet Section -->
+            <div class="learning-section" id="alphabet-section">
+                <h3>Alphabet</h3>
+                <div class="video-grid">
+                    {% for letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' %}
+                        <div class="video-card">
+                            <h4>Letter {{ letter }}</h4>
+                            <video controls class="lesson-video">
+                                <source src="{{ url_for('static', filename='assets/' + letter + '.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Numbers Section -->
+            <div class="learning-section" id="numbers-section">
+                <h3>Numbers</h3>
+                <div class="video-grid">
+                    {% for number in range(10) %}
+                        <div class="video-card">
+                            <h4>Number {{ number }}</h4>
+                            <video controls class="lesson-video">
+                                <source src="{{ url_for('static', filename='assets/' + number|string + '.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Daily Talk Section -->
+            <div class="learning-section" id="daily-talk-section">
+                <h3>Daily Talk</h3>
+                <div class="video-grid">
+                    {% set daily_words = ['Hello', 'Thank You', 'Please', 'Sorry', 'Yes', 'No', 'Good Morning', 'Good Night', 'How Are You', 'Bye'] %}
+                    {% for word in daily_words %}
+                        <div class="video-card">
+                            <h4>{{ word }}</h4>
+                            <video controls class="lesson-video">
+                                <source src="{{ url_for('static', filename='assets/' + word|replace(' ', '') + '.mp4') }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Basics</h3>
+                    <ul class="lesson-list">
+                        <li><a href="#" class="lesson-link">Alphabet</a></li>
+                        <li><a href="#" class="lesson-link">Numbers</a></li>
+                        <li><a href="#" class="lesson-link">Greetings</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Common Words</h3>
+                    <ul class="lesson-list">
+                        <li><a href="#" class="lesson-link">Food & Drinks</a></li>
+                        <li><a href="#" class="lesson-link">Colors</a></li>
+                        <li><a href="#" class="lesson-link">Weather</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Conversations</h3>
+                    <ul class="lesson-list">
+                        <li><a href="#" class="lesson-link">Basic Phrases</a></li>
+                        <li><a href="#" class="lesson-link">Questions</a></li>
+                        <li><a href="#" class="lesson-link">Daily Talk</a></li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Advanced</h3>
+                    <ul class="lesson-list">
+                        <li><a href="#" class="lesson-link">Grammar</a></li>
+                        <li><a href="#" class="lesson-link">Expressions</a></li>
+                        <li><a href="#" class="lesson-link">Stories</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <h2>Your Learning Progress</h2>
+            <div class="progress-cards">
+                <div class="progress-card">
+                    <h4>Completed Lessons</h4>
+                    <p class="progress-number">0/12</p>
+                </div>
+                <div class="progress-card">
+                    <h4>Current Level</h4>
+                    <p class="progress-number">Beginner</p>
+                </div>
+                <div class="progress-card">
+                    <h4>Practice Hours</h4>
+                    <p class="progress-number">0</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; {{ now.year }} HandSpeak Innovators. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

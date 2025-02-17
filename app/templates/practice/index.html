@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice ASL - HandSpeak Innovators</title>
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/practice.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    {% include "includes/navbar.html" %}
+
+    <main class="practice-main">
+        <div class="practice-header">
+            <h1>Practice ASL</h1>
+            <p>Perfect your signing skills with real-time feedback</p>
+        </div>
+
+        <div class="practice-container">
+            <div class="practice-modes">
+                <div class="mode-card active" data-mode="letters">
+                    <i class="fas fa-font"></i>
+                    <h3>Letters</h3>
+                    <p>Practice alphabet signs</p>
+                </div>
+                <div class="mode-card" data-mode="numbers">
+                    <i class="fas fa-hashtag"></i>
+                    <h3>Numbers</h3>
+                    <p>Practice numeric signs</p>
+                </div>
+                <div class="mode-card" data-mode="words">
+                    <i class="fas fa-book"></i>
+                    <h3>Words</h3>
+                    <p>Practice common words</p>
+                </div>
+                <div class="mode-card" data-mode="phrases">
+                    <i class="fas fa-comment"></i>
+                    <h3>Phrases</h3>
+                    <p>Practice full sentences</p>
+                </div>
+            </div>
+
+            <div class="practice-area">
+                <div class="video-container">
+                    <video id="webcam" autoplay playsinline class="practice-video"></video>
+                    <canvas id="canvas" class="practice-canvas"></canvas>
+                </div>
+
+                <div class="practice-controls">
+                    <div class="target-sign">
+                        <h3>Sign This:</h3>
+                        <p id="current-target" class="target-text">Click Start to Begin</p>
+                    </div>
+                    
+                    <div class="control-buttons">
+                        <button id="startBtn" class="control-btn start">
+                            <i class="fas fa-play"></i> Start Practice
+                        </button>
+                        <button id="stopBtn" class="control-btn start" style="display:none;">
+                            <i class="fas fa-stop"></i> Stop Practice
+                        </button>
+                        <button id="skipBtn" class="control-btn skip" disabled>
+                            <i class="fas fa-forward"></i> Skip
+                        </button>
+                    </div>
+
+                    <div class="feedback-display">
+                        <p id="feedback-text">Ready to start practicing!</p>
+                        <div id="accuracy-meter" class="accuracy-meter">
+                            <div class="meter-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    console.log('Practice page loaded');
+                    startBtn.addEventListener('click', async () => {
+                        console.log('Start Practice button clicked');
+                        await startPractice();
+                    });
+                </script>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; {{ now.year }} HandSpeak Innovators. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/practice.js') }}"></script>
+</body>
+</html>
