@@ -10,7 +10,7 @@ const minFrameInterval = 25; // Minimum 25ms between frames (40 FPS max)
 let connectionLost = false;
 let frameRequestPending = false;
 
-const geminiApiKey = "AIzaSyDucxWbUmHs1Tktrre4DaQbaRez3Yb-fnI"; // Replace with your actual Gemini API key
+const geminiApiKey = "" // Replace with your actual Gemini API key
 
 
 async function generateSuggestions() {
