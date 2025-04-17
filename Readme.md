@@ -1,5 +1,15 @@
 # HandSpeak - Sign Language Communication System
 
+## 👨‍💻 Team Members
+
+This project was collaboratively developed by the following team members as part of CVMU Hackathon 3.0:
+
+- Meet Dalwadi
+- Harsh Jingar  
+- Raj Patel 
+
+All members contributed equally to the planning, development, and execution of the project.
+
 HandSpeak is a comprehensive platform designed to bridge the communication gap between the deaf/mute community and others through Sign Language. The system uses advanced Computer Vision and Deep Learning techniques to facilitate seamless communication.
 
 ## Problem 
